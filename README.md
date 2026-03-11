@@ -1,143 +1,153 @@
-# Movie Recommender System 🎬
+# 🎬 Movie Recommendation System
 
-A **Python-based web application** built with **Streamlit** that recommends movies similar to a selected movie and displays their posters. It uses a precomputed similarity matrix and TMDB API for fetching posters.  
-
----
-
-## Features
-
-- Select a movie from a dropdown list of popular movies.  
-- Get **top 5 recommended movies** similar to the selected movie.  
-- View movie posters for recommended movies.  
-- Simple and interactive **Streamlit interface**.  
-- Automatically downloads necessary data files from **Google Drive**.  
+A simple and interactive **Movie Recommendation System** built using **Python and Streamlit**.  
+This application recommends movies similar to the one selected by the user using a **content-based filtering approach**.
 
 ---
 
-## Tech Stack
+# 📌 Overview
 
-- **Python 3**  
-- **Streamlit** for the web interface  
-- **Pandas** for data handling  
-- **Pickle** for loading precomputed datasets  
-- **Requests** for fetching movie posters from TMDB API  
-- **gdown** for downloading files from Google Drive  
+Finding a good movie to watch can be difficult with thousands of options available.  
+This project solves that problem by recommending movies similar to the one you like.
+
+The system analyzes movie features such as **genres, keywords, cast, and crew**, and calculates similarity between movies to generate recommendations. Content-based recommendation systems compare movie attributes to suggest similar titles. :contentReference[oaicite:1]{index=1}
 
 ---
 
-## Project Structure
+# 🚀 Features
 
-```text
-Movie-Recommender-System/
+- 🎥 Recommend movies based on user selection  
+- 🖼️ Display movie posters  
+- ⚡ Fast recommendation generation using similarity matrix  
+- 💻 Interactive web interface using Streamlit  
+- 📊 Data processing with Pandas and NumPy  
+
+---
+
+# 🛠️ Technologies Used
+
+- **Python**
+- **Streamlit**
+- **Pandas**
+- **NumPy**
+- **Scikit-learn**
+- **TMDB API**
+
+---
+
+# 📂 Project Structure
+
+```
+movie-recommendation-system/
 │
-├─ app.py                  # Main Streamlit app
-├─ movie_dict.pkl          # Pickled movie dictionary
-├─ movies.pkl              # Pickled movie DataFrame
-├─ similarity.pkl          # Pickled similarity matrix
-├─ requirements.txt        # Python dependencies
-└─ README.md               # Project documentation
+├── app.py                  # Streamlit web application
+├── movie_list.pkl          # Movie dataset
+├── similarity.pkl          # Similarity matrix
+├── requirements.txt        # Project dependencies
+└── README.md               # Project documentation
+```
 
 ---
 
-## **Setup & Installation**
+# ⚙️ Installation & Setup
 
-### **1. Clone the repository**
+### 1️⃣ Clone the repository
+
 ```bash
-git clone <your-repo-url>
-cd Movie-Recommender-System
-## **Setup & Installation**
-Clone the repository
+git clone https://github.com/GajjalaSandhya/movie-recommendation-system.git
+cd movie-recommendation-system
+```
 
-git clone <your-repo-url>
-cd Movie-Recommender-System
+### 2️⃣ Create a virtual environment
 
-Create a virtual environment (optional but recommended)
+```bash
+python -m venv venv
+```
 
-python3 -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+### 3️⃣ Activate the virtual environment
 
-Install dependencies
+**Windows**
 
+```bash
+venv\Scripts\activate
+```
+
+**Mac/Linux**
+
+```bash
+source venv/bin/activate
+```
+
+### 4️⃣ Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Run the app
+### 5️⃣ Run the application
 
+```bash
 streamlit run app.py
-
-Open your browser and visit the URL displayed in the terminal (usually http://localhost:8501).
-
-Deployment on Render
-
-Add your Python 3 runtime in runtime.txt (e.g., python-3.12).
-
-Set the Start Command in Render as:
-
-streamlit run app.py --server.port $PORT --server.address 0.0.0.0
-
-Add all dependencies to requirements.txt.
-
-Deploy the project; Render will automatically run the Start Command.
-
-How It Works
-
-Data Loading
-
-Downloads three files from Google Drive if not already present:
-
-movie_dict.pkl → movie dictionary
-
-movies.pkl → pandas DataFrame of movies
-
-similarity.pkl → precomputed similarity matrix
-
-Recommendation Logic
-
-When a movie is selected, the app finds its index in the DataFrame.
-
-Retrieves similarity scores from the similarity matrix.
-
-Returns top 5 movies sorted by similarity.
-
-Poster Fetching
-
-Uses TMDB API to fetch posters for recommended movies.
-
-Streamlit Interface
-
-Displays movie names and posters in 5 columns for easy viewing.
-
-Requirements
-streamlit
-pandas
-numpy
-requests
-gdown
-pickle-mixin
-Screenshots
-
-
-Screenshot showing the dropdown selection and recommended movie posters.
-
-Future Improvements
-
-Add user ratings for personalized recommendations.
-
-Include movie genres or release year filtering.
-
-Deploy a faster caching system for TMDB API calls.
-
-Make the app mobile-responsive.
-
-License
-
-This project is open source and available under the MIT License.
-
+```
 
 ---
 
-This version is **fully formatted** for GitHub and will look professional. ✅  
+# 🌐 Usage
 
-If you want, I can also make a **ready-to-paste `requirements.txt`** file that matches your app perfectly for deployment on Render, so you don’t get any missing module errors.  
+1. Open the application in your browser.
+2. Select a movie from the dropdown list.
+3. Click the **Recommend** button.
+4. The system will display similar movie recommendations with posters.
 
-Do you want me to do that next?
+---
+
+# 🧠 How It Works
+
+1. The dataset contains movie metadata such as genres, cast, crew, and keywords.
+2. The text features are combined into a single format.
+3. A **vectorization technique** is applied to convert text into numerical vectors.
+4. **Cosine similarity** is calculated between movies.
+5. The system recommends the most similar movies based on similarity scores.
+
+---
+
+# 📸 Demo
+
+Example output:
+
+- Selected Movie → **Avatar**
+- Recommended Movies → Similar sci-fi and adventure movies.
+
+---
+
+# 🚀 Deployment
+
+This project can be deployed on platforms like:
+
+- Render
+- Heroku
+- Streamlit Cloud
+
+---
+
+# 📌 Future Improvements
+
+- Add user login system  
+- Add collaborative filtering  
+- Improve recommendation accuracy  
+- Add movie ratings and reviews  
+
+---
+
+# 👩‍💻 Author
+
+**Sandhya Gajjala**
+
+GitHub:  
+https://github.com/GajjalaSandhya
+
+---
+
+# ⭐ Support
+
+If you like this project, please **give it a star ⭐ on GitHub**.
