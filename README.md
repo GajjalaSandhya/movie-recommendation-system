@@ -37,7 +37,7 @@ Movie-Recommender-System/
 ├─ requirements.txt        # Python dependencies
 └─ README.md               # Project documentation
 
-Setup & Installation
+##Setup and installation
 
 Clone the repository
 
