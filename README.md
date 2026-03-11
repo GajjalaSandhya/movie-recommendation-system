@@ -150,8 +150,8 @@ This project can be deployed on platforms like:
 
 **Sandhya Gajjala**
 
-GitHub:  
-https://github.com/GajjalaSandhya
+AI / Machine Learning Enthusiast  
+Passionate about building intelligent applications using Python, Machine Learning, and Data Science.
 
 ---
 
