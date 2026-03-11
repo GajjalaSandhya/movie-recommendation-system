@@ -37,8 +37,15 @@ Movie-Recommender-System/
 ├─ requirements.txt        # Python dependencies
 └─ README.md               # Project documentation
 
-##Setup and installation
+---
 
+## **Setup & Installation**
+
+### **1. Clone the repository**
+```bash
+git clone <your-repo-url>
+cd Movie-Recommender-System
+## **Setup & Installation**
 Clone the repository
 
 git clone <your-repo-url>
