@@ -5,6 +5,13 @@ This application recommends movies similar to the one selected by the user using
 
 ---
 
+## 🚀 Live Demo
+
+🌐 Try the live application here:  
+https://movie-recommendation-system-zkv8.onrender.com
+
+---
+
 # 📌 Overview
 
 Finding a good movie to watch can be difficult with thousands of options available.  
