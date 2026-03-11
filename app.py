@@ -2,6 +2,39 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import gdown
+import os
+
+
+# Google Drive file IDs
+movie_dict_id = "1VimjrTkX7CNPytmuveClGnlG6CG72SQB"
+movies_id = "17qnjGJF32d5-4jSD389CURKZWIxC32vG"
+similarity_id = "1a6dTcpWSf2uMVwE8BHRMGKOvgbh1cYdZ"
+
+
+# File names
+movie_dict_file = "movie_dict.pkl"
+movies_file = "movies.pkl"
+similarity_file = "similarity.pkl"
+
+
+# Download files if not already downloaded
+if not os.path.exists(movie_dict_file):
+    gdown.download(f"https://drive.google.com/uc?id={movie_dict_id}", movie_dict_file, quiet=False)
+
+if not os.path.exists(movies_file):
+    gdown.download(f"https://drive.google.com/uc?id={movies_id}", movies_file, quiet=False)
+
+if not os.path.exists(similarity_file):
+    gdown.download(f"https://drive.google.com/uc?id={similarity_id}", similarity_file, quiet=False)
+
+
+# Load pickle files
+movies_dict = pickle.load(open(movie_dict_file,'rb'))
+movies = pd.DataFrame(movies_dict)
+
+similarity = pickle.load(open(similarity_file,'rb'))
+
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=8dc4f087d16d2907c6481660ccbad2ee&language=en-US"
@@ -31,11 +64,6 @@ def recommend(movie):
 
     return recommended_movies, recommended_movies_posters
 
-
-movies_dict = pickle.load(open('movie_dict.pkl','rb'))
-movies = pd.DataFrame(movies_dict)
-
-similarity = pickle.load(open('similarity.pkl','rb'))
 
 st.title('Movie Recommender System')
 
